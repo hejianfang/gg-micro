@@ -1,0 +1,28 @@
+$color-t: #6e7dc3;
+$color-d:#17233D;
+$color-dd:#515A6E;
+$color-s:#8c8c8c;
+$color-green:#1dbc9c;
+$color-red:#ee4973;
+$color-purple:#9752ff;
+$color-yellow:#ffcd29;
+$color-blue:#518fff;
+$color-bg:#eff2f8;
+$color-sl:#efeef3;
+$color-border:#dcdfe6;
+$border-d: 1px solid $color-border;
+$imgUrl:'~@/assets/imgs';
+
+.flex-between{
+  display: flex;
+  justify-content: space-between;
+}
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.common-card{
+  background-color: #fff;
+  box-shadow: 1px 1px 20px 0px rgba(110, 125, 195, 0.2);
+}

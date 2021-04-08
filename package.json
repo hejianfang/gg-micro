@@ -1,0 +1,14 @@
+{
+  "name": "guozhi-web-micro",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "init": "node gg-config/install.js",
+    "cinit": "node gg-config/install.js cnpm",
+    "yinit": "node gg-config/install.js yarn",
+    "serve": "node gg-config/start.js",
+    "build": "node gg-config/build.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

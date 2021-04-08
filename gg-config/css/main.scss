@@ -1,0 +1,415 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+html,body{
+  line-height: 1.5;
+  font-weight: 400;
+  font-family:Arial,'PingFang SC','Microsoft YaHei','微软雅黑',sans-serif;
+  word-break:break-all;
+  background: $color-bg;
+  color: $color-d;
+  font-size: 14px;
+}
+a,button{
+  outline: none;
+  color: inherit;
+  background: transparent;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  &[disabled],
+  &[disabled="disabled"] {
+    cursor: not-allowed;
+  }
+}
+h1,h2,h3,h4,h5{
+  font-weight: 400;
+}
+ul,
+li {
+  list-style: none;
+  &[disabled],
+  &[disabled="disabled"] {
+    cursor: not-allowed;
+  }
+}
+em,
+i {
+  font-style: normal;
+}
+img{
+  max-width: 100%;
+}
+.kfformula{ // 公式图片样式
+  vertical-align: middle;
+}
+/* 清除浮动 */
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix::before,
+.clearfix::after {
+  display: table;
+  content: "";
+}
+
+.clearfix::after {
+  clear: both;
+}
+/* css溢出隐藏 */
+.css-hide {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.css-hide-2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  word-break: break-word;
+}
+.css-hide-3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  word-break: break-word;
+}
+/* 垂直对齐方式 */
+.vt {
+  vertical-align: top;
+}
+
+.vm {
+  vertical-align: middle;
+}
+
+.vb {
+  vertical-align: bottom;
+}
+.fl {
+  float: left !important;
+}
+.fr {
+  float: right !important;
+}
+
+.color-t{
+  color: $color-t
+}
+.color-d{
+  color: $color-d
+}
+.color-s{
+  color: $color-s
+}
+.color-red{
+  color: $color-red
+}
+.color-dd{
+  color: $color-dd
+}
+.pointer {
+  cursor: pointer;
+}
+.hover-bold{
+  i{
+    position: relative;
+    top: 1px;
+  }
+  &:hover{
+    font-weight: bold;
+    i{
+      font-weight: bold;
+    }
+  }
+}
+.pseudo{
+  font-size: 14px;
+  position: relative;
+  &::before{
+    content:'';
+    display: inline-block;
+    vertical-align: middle;
+    width: 4px;
+    height: 14px;
+    background: $color-t;
+    border-radius: 2px;
+    margin-right: 10px;
+    margin-bottom: 3px;
+  }
+}
+.pseudo-new{
+  font-size: 14px;
+  position: relative;
+  &::before{
+    content:'';
+    display: inline-block;
+    position: absolute;
+    width: 6px;
+    height: 24px;
+    top:50%;
+    left: -24px;
+    transform:translateY(-50%);
+    background: $color-t;
+    border-radius:0px 100px 100px 0px;
+  }
+}
+.must-write {
+  line-height: 32px;
+  text-align: right;
+  margin-right: 10px;
+  min-width: 90px;
+  span{
+    position: relative;
+    &::before{
+      content: '*';
+      color:$color-red;
+      font-size: 16px;
+      position: absolute;
+      left:-10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+// 查询列表
+.search-list{
+  li {
+    display: inline-block;
+    .el-date-editor{
+      margin-left: 4px;
+    }
+    .el-input, .el-select {
+      width: 160px;
+      margin-left: 4px;
+    }
+    margin-right: 20px;
+  }
+}
+// 表格
+.common-table{
+  width: 100%;
+  background: #fff;
+  border-collapse: collapse;
+  border-spacing: 0;
+  th,td{
+    border:1px solid $color-sl;
+    text-align: center;
+    font-size: 14px;
+    height: 36px;
+    padding: 5px;
+    font-weight: 400;
+    color: $color-dd;
+    &.table-order {
+      text-align: left;
+      padding-left: 10px;
+      width: 60px;
+    }
+  }
+  th{
+    color: $color-d;
+    background: $color-bg;
+    border-right: 0;
+    position: relative;
+    &::after{
+      content:'';
+      width: 1px;
+      height: 20px;
+      background: #cbd3e0;
+      position: absolute;
+      right: -0.5px;
+      top:50%;
+      transform: translateY(-50%);
+    }
+    &:last-child{
+      border-right:1px solid $color-sl;
+      &::after{
+        display: none;
+      }
+    }
+  }
+  .text-left{
+    text-align: left;
+  }
+  a{
+    color: $color-t;
+  }
+}
+// tooltip
+.el-tooltip__popper.is-dark {
+  background-color: $color-t;
+  box-shadow: 0px 0px 10px 0px rgba(110, 125, 195, 0.2);
+  font-weight: normal;
+  color: #fff;
+  .popper__arrow {
+    border-top-color: $color-t;
+    border-bottom-color: $color-t;
+    &::after {
+      border-top-color: $color-t;
+      border-bottom-color: $color-t;
+    }
+  }
+}
+.el-pagination{
+  text-align: center;
+}
+// tag
+.el-tag{
+  background:$color-bg;
+  border-color: $color-bg;
+  border-radius:2px;
+  color: $color-d;
+  .el-tag__close{
+    color: $color-d;
+  }
+}
+.el-tag+.el-button{
+  background:$color-bg;
+  border-color: $color-bg;
+  border-radius:2px;
+  color: $color-d;
+  &:hover{
+    color: $color-t;
+  }
+}
+.el-button--danger{
+  background-color: $color-red;
+  border-color: $color-red;
+  color: #fff;
+  &:hover,
+  &:focus,
+  &:active{
+    background-color: $color-red;
+    border-color: $color-red;
+    color:#fff;
+  }
+  &.is-disabled {
+    background-color: $color-red;
+    border-color: $color-red;
+    color: #fff;
+    opacity: .6;
+    &:hover,
+    &:focus,
+    &:active{
+      background-color: $color-red;
+      border-color: $color-red;
+      color: #fff;
+      opacity: .6;
+    }
+  }
+}
+.el-button--info{
+  background-color: $color-bg;
+  border-color: $color-bg;
+  color: $color-dd;
+  &:hover,
+  &:focus,
+  &:active{
+    background-color: $color-bg;
+    border-color: $color-bg;
+    color: $color-t;
+  }
+  &.is-disabled {
+    background-color: $color-bg;
+    border-color: $color-bg;
+    color: $color-dd;
+    opacity: .6;
+    &:hover,
+    &:focus,
+    &:active{
+      background-color: $color-bg;
+      border-color: $color-bg;
+      color:$color-dd;
+      opacity: .6;
+    }
+  }
+}
+.el-button--success{
+  background-color: $color-green;
+  border-color: $color-green;
+  &:hover,
+  &:focus,
+  &:active{
+    background-color: $color-green;
+    border-color: $color-green;
+    opacity: .8;
+  }
+  &.is-disabled {
+    background-color: $color-green;
+    border-color: $color-green;
+    opacity: .6;
+    &:hover,
+    &:focus,
+    &:active{
+      background-color: $color-green;
+      border-color: $color-green;
+      opacity: .6;
+    }
+  }
+}
+// 时间日期控件‘至’少半边的问题 css
+.el-date-editor .el-range-separator {
+  width: 8%;
+}
+
+.editor-container {
+  z-index: 1 !important;
+  ul li {
+    list-style: square;
+  }
+  ol {
+    padding-left: 16px;
+    li {
+      list-style: decimal;
+    }
+  }
+}
+.el-image{
+  .image-slot{
+    width: 100%;
+    height: 100%;
+    background-color: $color-bg;
+    text-align: center;
+    color:$color-s;
+    font-size: 12px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.el-message-box__status.el-icon-error{
+  color:$color-red;
+}
+.el-message-box__wrapper{
+  .el-message-box__btns{
+    margin-top: 24px;
+    .el-button + .el-button {
+      margin-left: 50px;
+    }
+    .el-button--danger{
+      background-color: $color-red;
+      border-color: $color-red;
+      color: #fff;
+      &:focus,
+      &:active{
+        background-color: $color-red;
+        border-color: $color-red;
+        color: #fff;
+      }
+      &:hover{
+        background-color: rgba(238, 73, 115, 0.8);
+      }
+    }
+  }
+}
+.el-checkbox{
+ font-weight: 400;
+}
